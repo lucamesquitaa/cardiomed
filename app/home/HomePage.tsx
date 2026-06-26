@@ -25,46 +25,37 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/10" />
 
           {/* Hero content card — right side */}
-          <div className="absolute right-24 top-[72px] bottom-6 z-10 w-[420px] flex items-center">
+          <div className="absolute right-24 top-[72px] bottom-6 z-10 w-[420px] flex items-center justify-center hero-card-enter">
             <div
               className="rounded-3xl p-8 xl:p-10 w-full max-h-full"
               style={{
-                background: "rgba(170, 213, 244, 0.13)",
+                background: "rgba(170, 213, 244, 0.2)",
                 backdropFilter: "blur(22px)",
                 WebkitBackdropFilter: "blur(22px)",
                 border: "1px solid rgba(255,255,255,0.28)",
-                boxShadow: "0 8px 40px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.35)",
+                boxShadow: "0 8px 40px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255, 255, 255, 0.64)",
+                transform: "translateZ(0)",
               }}
             >
+              <div className="hero-card-content flex flex-col justify-between items-center h-full">
 
               {/* Headline */}
-              <h1 className="text-white text-[2.6rem] font-bold leading-[1.12] tracking-tight mb-6">
-                Alta tecnologia<br />
-                para quem não<br />
-                abre mão do{" "}
-                <em
-                  className="not-italic"
-                  style={{ color: "#37c273", fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: "italic" }}
-                >
-                  melhor.
-                </em>
-              </h1>
+              <h2 className="text-white text-[2.1rem] font-bold leading-[1.12] tracking-tight mb-6">
+                Excelência e cuidado 
+                <br/>
+                 que salvam vidas
+                  
+              </h2>
 
               {/* Body */}
               <p className="text-white/88 text-[0.95rem] leading-relaxed mb-4">
-                Há mais de <strong className="text-white font-semibold">25 anos</strong>, a CARDIOMED
-                leva ao Brasil o que há de mais avançado no mundo — com suporte especializado em cada
-                etapa, do implante ao acompanhamento.
+                Há mais de 25 anos, a CardioMed traz ao <br/> Brasil o que há de mais avançado no mundo <br/> em soluções de tecnologia cardíaca. <br/>
               </p>
 
-              {/* CTA */}
-              <div className="flex justify-center mb-8">
-                <Link
-                  href="/produtos"
-                  className="inline-flex items-center gap-2.5 border border-white/35 text-white text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-white/12 transition-colors duration-200"
-                >
-                  <span className="text-base leading-none text-lg">📦</span>
-                  Ver Soluções ↗
+              {/* CTA Button */}
+              <div className="mt-1 mb-2">
+                <Link href="/produtos" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 inline-block">
+                  Conheça nossos produtos ↗
                 </Link>
               </div>
 
@@ -85,22 +76,24 @@ export default function HomePage() {
                   <p className="text-white/55 text-[11px] mt-1">tecnologia mundial</p>
                 </div>
               </div>
-            </div>
-          </div>
+              </div>{/* hero-card-content */}
+            </div>{/* glass card */}
+          </div>{/* hero-card-enter */}
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-bounce">
+          <a href="#partners" className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-bounce cursor-pointer">
             <span className="text-white/60 text-[10px] uppercase tracking-[0.2em]">
               rolar
             </span>
             <svg className="w-10 h-10 text-white/70" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
-          </div>
+          </a>
         </section>
 
         {/* ── PARTNERS ───────────────────────────────────────── */}
         <section
+          id="partners"
           style={{
             background: "linear-gradient(160deg, #1e6b3e 0%, #1a5934 45%, #133f26 100%)",
           }}
@@ -193,16 +186,14 @@ export default function HomePage() {
               <h2 className="text-black text-4xl font-bold leading-[1.15] tracking-tight">
                 Há 25 anos entregando<br />
                 o{" "}
-                <em
+                <span
                   className="not-italic"
                   style={{
-                    color: "#216d42",
-                    fontFamily: "Georgia, 'Times New Roman', serif",
-                    fontStyle: "italic",
+                    color: "#216d42"
                   }}
                 >
                   melhor.
-                </em>
+                </span>
               </h2>
 
               <p className="text-black/80 leading-relaxed text-lg">
@@ -214,9 +205,9 @@ export default function HomePage() {
 
               <a
                 href="/sobre"
-                className="inline-flex items-center gap-2 text-black font-semibold px-6 py-3 rounded-full transition-colors duration-200 hover:bg-white/20"
+                className="inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200 hover:bg-white/20"
                 style={{
-                  background: "rgba(255,255,255,0.13)",
+                  background: "rgba(78, 78, 78, 0.62)",
                   backdropFilter: "blur(14px)",
                   WebkitBackdropFilter: "blur(14px)",
                   border: "1px solid rgba(255,255,255,0.28)",
@@ -242,24 +233,7 @@ export default function HomePage() {
                 />
               </div>
 
-              {/* Card platform — glassmorphism */}
-              <div
-                className="relative z-10 rounded-3xl overflow-hidden"
-                style={{
-                  marginTop: "-256px",
-                  height: "210px",
-                  background: "rgba(255, 255, 255, 0.85)",
-                  backdropFilter: "blur(22px)",
-                  WebkitBackdropFilter: "blur(22px)",
-                  border: "1px solid rgba(255,255,255,0.20)",
-                  boxShadow: "0 8px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.18)",
-                }}
-              >
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-12 pointer-events-none"
-                  style={{ background: "linear-gradient(to top, rgba(100,165,232,0.18), transparent)" }}
-                />
-              </div>
+                
             </div>
           </div>
 

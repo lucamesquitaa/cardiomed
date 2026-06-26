@@ -69,28 +69,13 @@ export default function SobrePage() {
                 backgroundSize: "42px 42px",
               }}
             />
-            {/* Large blurred circle — top left */}
-            <div
-              className="absolute -top-24 -left-24 w-80 h-80 rounded-full"
-              style={{ background: "radial-gradient(circle, rgba(33,109,66,0.12) 0%, transparent 70%)" }}
-            />
-            {/* Medium blurred circle — bottom right */}
-            <div
-              className="absolute -bottom-20 right-1/4 w-64 h-64 rounded-full"
-              style={{ background: "radial-gradient(circle, rgba(33,109,66,0.09) 0%, transparent 70%)" }}
-            />
-            {/* Small accent circle — mid left */}
-            <div
-              className="absolute top-1/2 -left-10 w-36 h-36 rounded-full -translate-y-1/2"
-              style={{ background: "radial-gradient(circle, rgba(26,89,52,0.10) 0%, transparent 70%)" }}
-            />
+            
           </div>
           <div className="max-w-3xl mx-auto px-8 text-center">
          
             <h1 className="text-4xl font-bold text-gray-900 leading-tight mb-6">
-              Conheça à <em
+              Conheça a <em
                   className="not-italic"
-                  style={{ color: "#37c273", fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: "italic" }}
                 >
                   Cardiomed
                 </em>
@@ -99,14 +84,14 @@ export default function SobrePage() {
              Somos referência em tecnologia médico-hospitalar para cardiologia. Desde a nossa fundação,
               unimos{" "}
               <strong className="text-gray-800 font-semibold">inovação</strong>,{" "}
-              <strong className="text-gray-800 font-semibold">suporte especializado</strong> e
-              parcerias com os maiores fabricantes do mundo para oferecer o melhor.
+              <strong className="text-gray-800 font-semibold">suporte especializado</strong> 
+              <strong className="text-gray-800 font-semibold"> e parcerias</strong> com os maiores fabricantes do mundo para oferecer o melhor.
             </p>
           </div>
         </section>
 
         {/* ── FEATURED VIDEO ─────────────────────────────────── */}
-        <section className="bg-white pb-0">
+        <section className="bg-white pb-20">
           <div className="max-w-4xl mx-auto px-8">
             <div
               className="relative rounded-2xl overflow-hidden shadow-2xl"
@@ -128,88 +113,6 @@ export default function SobrePage() {
           </div>
         </section>
 
-        {/* Wave divider: white → dark green */}
-        <div
-          style={{
-            marginTop: 41,
-            background: "linear-gradient(160deg, #1e6b3e 0%, #1a5934 45%, #133f26 100%)",
-          }}
-        >
-          <svg viewBox="0 0 1440 80" className="w-full block" preserveAspectRatio="none">
-            <path d="M0,0 C480,80 960,10 1440,55 L1440,0 Z" fill="white" />
-          </svg>
-        </div>
-
-        {/* ── ORGANOGRAM ─────────────────────────────────────── */}
-        <section
-          className="pb-24"
-          style={{
-            background: "linear-gradient(160deg, #1e6b3e 0%, #1a5934 45%, #133f26 100%)",
-          }}
-        >
-          <div className="max-w-5xl mx-auto px-8">
-            
-
-            {/* Tree */}
-            <div>
-              {/* Level 1 */}
-              <div className="flex justify-center">
-                <OrgCard
-                  name="Eliane Capistrano"
-                  role="Fundadora e Diretora Executiva"
-                  initials="EC"
-                  bullets={[
-                    "Fundadora da Cardiomed",
-                    "+25 anos no setor médico",
-                    "Liderança e visão estratégica",
-                  ]}
-                />
-              </div>
-
-              {/* Connector */}
-              <div className="relative" style={{ height: 56 }}>
-                <div
-                  className="absolute bg-white/25 w-px"
-                  style={{ top: 0, left: "50%", height: 28, transform: "translateX(-50%)" }}
-                />
-                <div
-                  className="absolute bg-white/25"
-                  style={{ top: 28, left: "25%", right: "25%", height: 1 }}
-                />
-                <div
-                  className="absolute bg-white/25 w-px"
-                  style={{ top: 28, left: "25%", height: 28 }}
-                />
-                <div
-                  className="absolute bg-white/25 w-px"
-                  style={{ top: 28, right: "25%", height: 28 }}
-                />
-              </div>
-
-              {/* Level 2 */}
-              <div className="flex justify-around">
-                <OrgCard
-                  name="Pedro Capistrano"
-                  role="Diretor Comercial"
-                  initials="PC"
-                  bullets={[
-                    "Gestão de parcerias estratégicas",
-                    "Expansão e crescimento comercial",
-                  ]}
-                />
-                <OrgCard
-                  name="Victor Capistrano"
-                  role="Diretor Técnico"
-                  initials="VC"
-                  bullets={[
-                    "Suporte técnico especializado",
-                    "Inovação em dispositivos médicos",
-                  ]}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </>
   );

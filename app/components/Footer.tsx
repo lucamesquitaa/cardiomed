@@ -17,19 +17,21 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-8 py-14 grid grid-cols-1 md:grid-cols-3 gap-12">
 
         {/* ── Marca ── */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-2 align-start items-center">
           <Link href="/" className="inline-block w-fit">
             <Image
               src="/images/logo2.png"
               alt="Cardiomed"
-              width={120}
-              height={60}
-              className="h-14 w-auto brightness-0"
+              width={170}
+              height={130}
+              className="w-auto"
             />
           </Link>
 
           <p className="text-sm text-black/65 leading-relaxed max-w-[260px]">
-            Há mais de 25 anos fornecendo equipamentos médico-hospitalares de alta qualidade ao Brasil.
+            Há mais de 25 anos, a CardioMed traz ao
+Brasil o que há de mais avançado no mundo
+em soluções de tecnologia cardíaca.
           </p>
 
           {/* Social icons */}

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import PartnerMarquee from "../components/PartnerMarquee";
+import MeetingScheduleForm from "../components/MeetingScheduleForm";
+import ScrollReveal from "../components/ScrollReveal";
 
 export default function HomePage() {
   return (
@@ -10,13 +12,13 @@ export default function HomePage() {
 
       <main className="overflow-hidden">
         {/* ── HERO ───────────────────────────────────────────── */}
-        <section className="relative h-screen min-h-[640px] flex items-center">
+        <section className="relative min-h-[680px] h-[100svh] sm:h-screen flex items-center">
           {/* Background image */}
           <Image
             src="/images/hero.png"
             alt="Médicos em sala cirúrgica com equipamentos de monitoramento cardíaco"
             fill
-            className="object-cover object-left-top"
+            className="object-cover object-[75%_top] sm:object-left-top"
             priority
           />
 
@@ -25,9 +27,9 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/10" />
 
           {/* Hero content card — right side */}
-          <div className="absolute right-24 top-[72px] bottom-6 z-10 w-[420px] flex items-center justify-center hero-card-enter">
+          <div className="absolute inset-x-4 top-20 bottom-6 z-10 flex items-center justify-center hero-card-enter sm:inset-x-8 md:inset-x-auto md:right-24 md:top-[72px] md:bottom-6 md:w-[420px]">
             <div
-              className="rounded-3xl p-8 xl:p-10 w-full max-h-full"
+              className="rounded-3xl p-6 sm:p-8 xl:p-10 w-full max-h-full overflow-y-auto"
               style={{
                 background: "rgba(170, 213, 244, 0.2)",
                 backdropFilter: "blur(22px)",
@@ -40,40 +42,37 @@ export default function HomePage() {
               <div className="hero-card-content flex flex-col justify-between items-center h-full">
 
               {/* Headline */}
-              <h2 className="text-white text-[2.1rem] font-bold leading-[1.12] tracking-tight mb-6">
-                Excelência e cuidado 
-                <br/>
-                 que salvam vidas
-                  
+              <h2 className="text-white text-[1.6rem] sm:text-[1.85rem] md:text-[2.1rem] font-bold leading-[1.15] tracking-tight mb-4 md:mb-6">
+                Excelência e cuidado que salvam vidas
               </h2>
 
               {/* Body */}
-              <p className="text-white/88 text-[0.95rem] leading-relaxed mb-4">
-                Há mais de 25 anos, a CardioMed traz ao <br/> Brasil o que há de mais avançado no mundo <br/> em soluções de tecnologia cardíaca. <br/>
+              <p className="text-white/88 text-[0.85rem] sm:text-[0.95rem] leading-relaxed mb-4">
+                Há mais de 25 anos, a CardioMed traz ao Brasil o que há de mais avançado no mundo em soluções de tecnologia cardíaca.
               </p>
 
               {/* CTA Button */}
               <div className="mt-1 mb-2">
-                <Link href="/produtos" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 inline-block">
+                <Link href="/produtos" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 sm:py-3 sm:px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 inline-block text-sm sm:text-base">
                   Conheça nossos produtos ↗
                 </Link>
               </div>
 
               {/* Stats */}
-              <div className="flex items-center gap-0 pt-6 border-t border-white/20">
+              <div className="flex items-center gap-0 pt-4 md:pt-6 border-t border-white/20 w-full">
                 <div className="flex-1 text-center">
-                  <p className="text-white text-2xl font-bold leading-none">25+</p>
-                  <p className="text-white/55 text-[11px] mt-1">anos de atuação</p>
+                  <p className="text-white text-lg sm:text-2xl font-bold leading-none">25+</p>
+                  <p className="text-white/55 text-[10px] sm:text-[11px] mt-1">anos de atuação</p>
                 </div>
                 <div className="w-px h-9 bg-white/20" />
                 <div className="flex-1 text-center">
-                  <p className="text-white text-2xl font-bold leading-none">100%</p>
-                  <p className="text-white/55 text-[11px] mt-1">suporte técnico dedicado</p>
+                  <p className="text-white text-lg sm:text-2xl font-bold leading-none">100%</p>
+                  <p className="text-white/55 text-[10px] sm:text-[11px] mt-1">suporte técnico dedicado</p>
                 </div>
                 <div className="w-px h-9 bg-white/20" />
                 <div className="flex-1 text-center">
-                  <p className="text-white text-2xl font-bold leading-none">Alta</p>
-                  <p className="text-white/55 text-[11px] mt-1">tecnologia mundial</p>
+                  <p className="text-white text-lg sm:text-2xl font-bold leading-none">Alta</p>
+                  <p className="text-white/55 text-[10px] sm:text-[11px] mt-1">tecnologia mundial</p>
                 </div>
               </div>
               </div>{/* hero-card-content */}
@@ -97,22 +96,21 @@ export default function HomePage() {
           style={{
             background: "linear-gradient(160deg, #1e6b3e 0%, #1a5934 45%, #133f26 100%)",
           }}
-          className="py-20"
+          className="py-14 sm:py-20"
         >
           {/* Title with decorative lines */}
-          <div className="max-w-4xl mx-auto px-8 text-center mb-12">
-            <div className="flex items-center justify-center gap-5 mb-8">
-              <div className="h-px flex-1 max-w-[80px]" style={{ background: "rgba(255,255,255,0.3)" }} />
-              <h2 className="text-3xl font-bold text-white tracking-tight">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center mb-10 sm:mb-12">
+            <div className="flex items-center justify-center gap-3 sm:gap-5 mb-6 sm:mb-8">
+              <div className="h-px flex-1 max-w-[50px] sm:max-w-[80px]" style={{ background: "rgba(255,255,255,0.3)" }} />
+              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 Parceiros Estratégicos
               </h2>
-              <div className="h-px flex-1 max-w-[80px]" style={{ background: "rgba(255,255,255,0.3)" }} />
+              <div className="h-px flex-1 max-w-[50px] sm:max-w-[80px]" style={{ background: "rgba(255,255,255,0.3)" }} />
             </div>
-            <p className="text-white/85 text-lg leading-loose max-w-2xl mx-auto">
+            <p className="text-white/85 text-base sm:text-lg leading-loose max-w-2xl mx-auto">
               A excelência que entregamos é resultado de{" "}
               <strong className="text-white">parcerias sólidas</strong> com grandes fabricantes de{" "}
-              <strong className="text-white">tecnologia de ponta</strong>. Juntos — fabricantes,
-              médicos, hospitais, técnicos e especialistas — formamos um{" "}
+              <strong className="text-white">tecnologia de ponta</strong>. Juntos formamos um{" "}
               <strong className="text-white">time unido</strong>, com propósito de oferecer{" "}
               <strong className="text-white">o melhor</strong> em saúde e qualidade de vida.
             </p>
@@ -168,8 +166,8 @@ export default function HomePage() {
 
           {/* Content */}
           <div
-            className="relative max-w-6xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
-            style={{ paddingTop: "148px", paddingBottom: "148px", zIndex: 10 }}
+            className="relative max-w-6xl mx-auto px-6 sm:px-8 py-16 sm:py-24 lg:py-[148px] grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+            style={{ zIndex: 10 }}
           >
             {/* Text */}
             <div className="space-y-6">
@@ -178,12 +176,12 @@ export default function HomePage() {
                   className="text-sm font-semibold uppercase tracking-[0.25em] mb-2"
                   style={{ color: "#000000" }}
                 >
-                  Nossa história
+                  Quem somos
                 </p>
                 <div className="mt-3 w-12 h-1 rounded-full" style={{ background: "#133f26" }} />
               </div>
 
-              <h2 className="text-black text-4xl font-bold leading-[1.15] tracking-tight">
+              <h2 className="text-black text-3xl sm:text-4xl font-bold leading-[1.15] tracking-tight">
                 Há 25 anos entregando<br />
                 o{" "}
                 <span
@@ -196,30 +194,27 @@ export default function HomePage() {
                 </span>
               </h2>
 
-              <p className="text-black/80 leading-relaxed text-lg">
+              <p className="text-black/80 leading-relaxed text-base sm:text-lg">
                 A CardioMed transforma{" "}
-                <strong className="text-black font-semibold">tecnologia de ponta</strong> em qualidade de vida —
-                entregando <strong className="text-black font-semibold">soluções</strong> médico-hospitalares que devolvem{" "}
+                <strong className="text-black font-semibold">tecnologia de ponta</strong> em qualidade de vida com{" "}
+                <strong className="text-black font-semibold">soluções</strong> médico-hospitalares que devolvem{" "}
                 <strong className="text-black font-semibold">o ritmo e o futuro</strong> a pacientes cardíacos e suas famílias.
               </p>
 
-              <a
-                href="/sobre"
-                className="inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-200 hover:bg-white/20"
-                style={{
-                  background: "rgba(78, 78, 78, 0.62)",
-                  backdropFilter: "blur(14px)",
-                  WebkitBackdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255,255,255,0.28)",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.22)",
-                }}
-              >
-                Saiba mais ↗
-              </a>
+              <Link
+              href="/sobre"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
+              style={{
+                background: "linear-gradient(135deg, #2ea55e 0%, #1a5934 100%)",
+                boxShadow: "0 4px 22px rgba(46,165,94,0.38)",
+              }}
+            >
+              Saiba mais ↗
+            </Link>
             </div>
 
             {/* Team photo */}
-            <div className="relative">
+            <ScrollReveal className="relative">
               <div
                 className="relative z-20"
                 style={{ filter: "drop-shadow(0 20px 48px rgba(0, 0, 0, 0.50))" }}
@@ -232,13 +227,32 @@ export default function HomePage() {
                   className="w-full h-auto object-contain rounded-3xl"
                 />
               </div>
-
-                
-            </div>
+            </ScrollReveal>
           </div>
 
         </section>
 
+        {/* ── AGENDAMENTO ────────────────────────────────────── 
+        <section
+          className="relative overflow-hidden py-20"
+          style={{
+            background: "linear-gradient(160deg, #646464 0%, #292929 100%)",
+          }}
+        >
+          <div className="max-w-xl mx-auto px-8">
+            <div className="mb-10 text-center">
+              <h2 className="text-3xl font-bold text-black tracking-tight mb-3">
+                Fale com nossos especialistas
+              </h2>
+              <p className="text-black/70 text-lg leading-relaxed">
+                Agende uma reunião e descubra como a CardioMed pode ajudar
+                sua instituição.
+              </p>
+            </div>
+            <MeetingScheduleForm />
+          </div>
+        </section>
+*/}
       </main>
     </>
   );

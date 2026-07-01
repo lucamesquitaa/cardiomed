@@ -1,125 +1,99 @@
 import Navbar from "../components/Navbar";
 import Link from "next/link";
+import ScrollReveal from "../components/ScrollReveal";
 
 const categories = [
   {
     icon: (
-      <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+      <svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
-    title: "Linha Bradicardia",
-    description:
-      "Marca-passos de última geração para tratamento da bradicardia, com tecnologia Biotronik para estimulação cardíaca segura e eficiente.",
-    items: ["Evity 6", "Solvia / Reocar", "Amvia", "Solia S53 / S60", "CSP S60", "SELECTRA 3D"],
+    title: "Dispositivos implantáveis de estimulação",
+    items: [
+      {
+        name: "Linha Bradicardia",
+        description:
+          "Marca-passos e eletrodos voltados ao tratamento de ritmos cardíacos lentos, restaurando a frequência adequada.",
+      },
+      {
+        name: "Linha Taquicardia",
+        description:
+          "Cardiodesfibriladores implantáveis (CDIs) e eletrodos para detectar e tratar ritmos acelerados e arritmias potencialmente fatais.",
+      },
+      {
+        name: "Ressincronização Cardíaca",
+        description:
+          "Dispositivos (TRC) que coordenam a contração das câmaras cardíacas em pacientes com insuficiência cardíaca, muitas vezes combinando funções de estimulação e desfibrilação.",
+      },
+    ],
   },
   {
     icon: (
-      <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    title: "Linha Taquicardia",
-    description:
-      "Cardioversores-desfibriladores implantáveis (CDI) para prevenção e tratamento de taquiarritmias ventriculares graves.",
-    items: ["Acticor / Rivacor", "Ilivia Neo", "Pamira S Dx", "Pamira S65", "Pamira SD"],
-  },
-  {
-    icon: (
-      <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-      </svg>
-    ),
-    title: "Ressincronização Cardíaca",
-    description:
-      "Dispositivos CRT para ressincronização biventricular no tratamento da insuficiência cardíaca com disfunção sistólica.",
-    items: ["Evity 8", "Amvia / Acticor 7", "Rivacor 5", "Ilivia Neo", "Sentus"],
-  },
-  {
-    icon: (
-      <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+      <svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     ),
-    title: "Monitoramento Cardíaco",
-    description:
-      "Sistemas de monitoramento cardíaco implantável e remoto para detecção de arritmias e acompanhamento contínuo do paciente.",
-    items: ["Biomonitor III", "Home Monitoring"],
+    title: "Diagnóstico e monitoramento",
+    items: [
+      {
+        name: "Monitoramento Cardíaco",
+        description:
+          "Monitores implantáveis e soluções de acompanhamento remoto para vigilância contínua do ritmo cardíaco.",
+      },
+      {
+        name: "Mapeamento Cardíaco",
+        description:
+          "Sistemas e cateteres de mapeamento eletroanatômico que localizam com precisão a origem das arritmias antes da intervenção.",
+      },
+    ],
   },
   {
     icon: (
-      <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-      </svg>
-    ),
-    title: "Mapeamento Cardíaco",
-    description:
-      "Sistemas avançados de mapeamento eletrofisiológico 3D e cateteres para diagnóstico e ablação de arritmias cardíacas complexas.",
-    items: ["Columbus 3D", "FIREMAGIC / EASYSTARS 3D", "EASYLOOP 3D", "EasyFinder / PathBuilder", "Transseptal EverPace", "Cateter Easyloop EverPace"],
-  },
-  {
-    icon: (
-      <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+      <svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
       </svg>
     ),
-    title: "Linha Eletrofisiológica",
-    description:
-      "Cateteres diagnósticos e terapêuticos para procedimentos de eletrofisiologia cardíaca, ablação por radiofrequência e crioablação.",
-    items: ["Alcath Fulfgold Circle", "Alcath Flutter Gold / Extra Gold", "Alcath Flux G eXtra", "Alcath G / LT G FullCircle", "Alcath FullCircle", "Qiona"],
-  },
-  {
-    icon: (
-      <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495" />
-      </svg>
-    ),
-    title: "Angioplastia",
-    description:
-      "Stents coronários de última geração com tecnologia Medinol para tratamento minimamente invasivo de lesões coronárias.",
-    items: ["Stent Elunir", "Stent Elunir Perl"],
-  },
-  {
-    icon: (
-      <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
-      </svg>
-    ),
-    title: "Extração de Eletrodos",
-    description:
-      "Ferramentas especializadas para extração segura de eletrodos de marca-passo e CDI, minimizando riscos em procedimentos de revisão.",
-    items: ["Liberator Beacon", "Evolution RL", "Bulldog Lead Extender", "One Tie Compression Coil", "Needle Eye Snare"],
-  },
-  {
-    icon: (
-      <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
-    title: "Oclusores Cardíacos",
-    description:
-      "Dispositivos para oclusão do apêndice atrial esquerdo e defeitos cardíacos estruturais, reduzindo o risco de AVC em pacientes com fibrilação atrial.",
-    items: ["LAmbre LAA Closure System", "Cera Occluders / CeraFlex", "GONAI-MF", "Laço de Captura Sequre", "Balão de Medição Acumark", "Introdutor SteerEase"],
+    title: "Procedimentos e intervenção",
+    items: [
+      {
+        name: "Linha Eletrofisiológica",
+        description:
+          "Cateteres de diagnóstico e ablação usados nos estudos e tratamentos das arritmias.",
+      },
+      {
+        name: "Angioplastia",
+        description: "Stents para tratamento de obstruções arteriais coronarianas.",
+      },
+      {
+        name: "Extração de Eletrodos",
+        description:
+          "Ferramentas específicas para remoção segura de eletrodos previamente implantados.",
+      },
+      {
+        name: "Oclusores Cardíacos",
+        description:
+          "Dispositivos de oclusão para fechamento de estruturas cardíacas (como o apêndice atrial esquerdo) e sistemas auxiliares de medição e liberação.",
+      },
+    ],
   },
 ];
 
 function ProductCard({
   icon,
   title,
-  description,
   items,
 }: {
   icon: React.ReactNode;
   title: string;
-  description: string;
-  items: string[];
+  items: { name: string; description: string }[];
 }) {
   return (
-    <div className="product-card group relative rounded-2xl p-6 flex flex-col gap-5 transition-all duration-300 ease-out hover:-translate-y-1.5 cursor-default overflow-hidden">
-      {/* Icon + product count badge */}
-      <div className="flex items-start justify-between">
+    <div className="product-card group relative rounded-2xl p-8 flex flex-col gap-6 transition-all duration-300 ease-out hover:-translate-y-1.5 cursor-default overflow-hidden">
+      {/* Icon + title */}
+      <div className="flex items-center gap-4">
         <div
-          className="flex h-11 w-11 items-center justify-center rounded-xl text-white shrink-0"
+          className="flex h-14 w-14 items-center justify-center rounded-xl text-white shrink-0"
           style={{
             background: "linear-gradient(135deg, #2ea55e 0%, #1a5934 100%)",
             boxShadow: "0 4px 16px rgba(0,0,0,0.35)",
@@ -127,29 +101,24 @@ function ProductCard({
         >
           {icon}
         </div>
-        <span className="card-badge text-[11px] font-medium text-emerald-300/80 group-hover:text-emerald-600 px-2.5 py-1 rounded-full tabular-nums transition-colors duration-300">
-          {items.length} {items.length === 1 ? "produto" : "produtos"}
-        </span>
+        <h3 className="text-white group-hover:text-gray-900 font-semibold text-lg leading-snug transition-colors duration-300">
+          {title}
+        </h3>
       </div>
 
-      {/* Text */}
-      <div>
-        <h3 className="text-white group-hover:text-gray-900 font-semibold text-[0.95rem] mb-2 leading-snug transition-colors duration-300">{title}</h3>
-        <p className="text-white/55 group-hover:text-gray-500 text-[0.82rem] leading-relaxed transition-colors duration-300">{description}</p>
-      </div>
-
-      {/* Divider */}
       <div className="card-divider h-px w-full transition-colors duration-300" />
 
-      {/* Items as pills */}
-      <div className="flex flex-wrap gap-1.5 mt-auto">
+      {/* Sub-topics */}
+      <div className="flex flex-col gap-4">
         {items.map((item) => (
-          <span
-            key={item}
-            className="card-pill text-[11px] text-white/60 group-hover:text-gray-600 px-2.5 py-1 rounded-full transition-colors duration-300"
-          >
-            {item}
-          </span>
+          <div key={item.name}>
+            <p className="text-white group-hover:text-gray-900 font-semibold text-[0.9rem] mb-1 transition-colors duration-300">
+              {item.name}
+            </p>
+            <p className="text-white/55 group-hover:text-gray-500 text-[0.82rem] leading-relaxed transition-colors duration-300">
+              {item.description}
+            </p>
+          </div>
         ))}
       </div>
     </div>
@@ -215,14 +184,16 @@ export default function ProdutosPage() {
             <div className="flex items-center justify-center gap-5 mb-10">
               <div className="h-px flex-1 max-w-[80px]" style={{ background: "rgba(255,255,255,0.18)" }} />
               <h2 className="text-sm font-semibold text-white/55 tracking-[0.18em] uppercase">
-                Categorias de Produtos
+                Nossas linhas de Produtos
               </h2>
               <div className="h-px flex-1 max-w-[80px]" style={{ background: "rgba(255,255,255,0.18)" }} />
             </div>
 
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {categories.map((cat) => (
-                <ProductCard key={cat.title} {...cat} />
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 items-start">
+              {categories.map((cat, index) => (
+                <ScrollReveal key={cat.title} delay={index * 150}>
+                  <ProductCard {...cat} />
+                </ScrollReveal>
               ))}
             </div>
           </div>

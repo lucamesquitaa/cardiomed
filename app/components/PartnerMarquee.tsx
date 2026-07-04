@@ -9,6 +9,7 @@ const partners = [
   { src: '/images/partner-medinol.png',       alt: 'Medinol',                         w: 150, h: 66 },
   { src: '/images/partner-merit-medical.png', alt: 'Merit Medical',                   w: 160, h: 66 },
   { src: '/images/partner-microport.png',     alt: 'MicroPort',                       w: 150, h: 60 },
+  { src: '/images/boyton-partner.png',     alt: 'Boyton',                       w: 100, h: 60 }
 ];
 
 // 4 copies ensures the track is wide enough for any common viewport

@@ -95,7 +95,7 @@ function ProductCard({
         <div
           className="flex h-14 w-14 items-center justify-center rounded-xl text-white shrink-0"
           style={{
-            background: "linear-gradient(135deg, #2ea55e 0%, #1a5934 100%)",
+            background: "linear-gradient(135deg, #5bc987 0%, #336B41 100%)",
             boxShadow: "0 4px 16px rgba(0,0,0,0.35)",
           }}
         >
@@ -132,7 +132,7 @@ export default function ProdutosPage() {
 
       <main
         className="overflow-hidden pt-[72px]"
-        style={{ background: "linear-gradient(160deg, #0d2e1a 0%, #1a5934 55%, #216d42 100%)" }}
+        style={{ background: "linear-gradient(160deg, #17472b 0%, #336B41 55%, #216d42 100%)" }}
       >
         {/* ── HERO ─────────────────────────────────────────── */}
         <section className="relative py-10 overflow-hidden">
@@ -217,7 +217,7 @@ export default function ProdutosPage() {
               href="/contato"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
               style={{
-                background: "linear-gradient(135deg, #2ea55e 0%, #1a5934 100%)",
+                background: "linear-gradient(135deg, #2ea55e 0%, #336B41 100%)",
                 boxShadow: "0 4px 22px rgba(46,165,94,0.38)",
               }}
             >

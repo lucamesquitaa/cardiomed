@@ -67,7 +67,7 @@ export default function HomePage() {
                 <div className="w-px h-9 bg-white/20" />
                 <div className="flex-1 text-center">
                   <p className="text-white text-lg sm:text-2xl font-bold leading-none">100%</p>
-                  <p className="text-white/55 text-[10px] sm:text-[11px] mt-1">suporte técnico dedicado</p>
+                  <p className="text-white/55 text-[10px] sm:text-[11px] mt-1">suporte técnico</p>
                 </div>
                 <div className="w-px h-9 bg-white/20" />
                 <div className="flex-1 text-center">
@@ -94,7 +94,7 @@ export default function HomePage() {
         <section
           id="partners"
           style={{
-            background: "linear-gradient(160deg, #1e6b3e 0%, #1a5934 45%, #133f26 100%)",
+            background: "linear-gradient(160deg, #5c8967 0%, #336b41 45%, #21462a 100%)",
           }}
           className="py-14 sm:py-20"
         >
@@ -136,7 +136,7 @@ export default function HomePage() {
             <div
               className="absolute bottom-16 left-8 w-44 h-44 opacity-50"
               style={{
-                backgroundImage: "radial-gradient(circle, #1a5934 1.8px, transparent 1.8px)",
+                backgroundImage: "radial-gradient(circle, #336B41 1.8px, transparent 1.8px)",
                 backgroundSize: "42px 42px",
               }}
             />
@@ -160,7 +160,7 @@ export default function HomePage() {
           {/* Top wave — green cap from partners section */}
           <div className="absolute top-0 left-0 right-0" style={{ zIndex: 3 }}>
             <svg viewBox="0 0 1440 90" className="w-full block" preserveAspectRatio="none">
-              <path d="M0,0 C480,90 960,0 1440,70 L1440,0 Z" fill="#133f26" />
+              <path d="M0,0 C480,90 960,0 1440,70 L1440,0 Z" fill="#2c693b" />
             </svg>
           </div>
 
@@ -205,7 +205,7 @@ export default function HomePage() {
               href="/sobre"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
               style={{
-                background: "linear-gradient(135deg, #2ea55e 0%, #1a5934 100%)",
+                background: "linear-gradient(135deg, #2ea55e 0%, #336B41 100%)",
                 boxShadow: "0 4px 22px rgba(46,165,94,0.38)",
               }}
             >

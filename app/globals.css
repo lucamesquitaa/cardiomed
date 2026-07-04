@@ -10,7 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-green-cardiomed: #1a5934;
+  --color-green-cardiomed: #336B41;
   --color-green-mid: #1e6b3e;
   --color-green-dark: #133f26;
   --color-blue-cardiomed: #66a5e8;
@@ -45,7 +45,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #1a5934;
+  background-color: #336B41;
   border-radius: 2px;
   transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }

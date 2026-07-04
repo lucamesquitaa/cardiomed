@@ -24,7 +24,7 @@ function OrgCard({
       <div
         className="w-20 h-20 rounded-full flex items-center justify-center text-white text-xl font-bold mb-3 shrink-0"
         style={{
-          background: "linear-gradient(135deg, #2ea55e 0%, #1a5934 100%)",
+          background: "linear-gradient(135deg, #2ea55e 0%, #336B41 100%)",
           boxShadow: "0 4px 18px rgba(0,0,0,0.35)",
         }}
       >
@@ -66,7 +66,7 @@ export default function SobrePage() {
             <div
               className="absolute bottom-16 left-8 w-44 h-44 opacity-50"
               style={{
-                backgroundImage: "radial-gradient(circle, #1a5934 1.8px, transparent 1.8px)",
+                backgroundImage: "radial-gradient(circle, #336B41 1.8px, transparent 1.8px)",
                 backgroundSize: "42px 42px",
               }}
             />
@@ -103,7 +103,7 @@ export default function SobrePage() {
               }}
             >
               <video
-                src="/videos/0529.mp4"
+                src="/videos/testevid.mp4"
                 autoPlay
                 muted
                 loop
@@ -175,7 +175,7 @@ function MvvCard({
       <div
         className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5"
         style={{
-          background: "linear-gradient(135deg, #2ea55e 0%, #1a5934 100%)",
+          background: "linear-gradient(135deg, #2ea55e 0%, #336B41 100%)",
           boxShadow: "0 4px 18px rgba(0,0,0,0.2)",
         }}
       >

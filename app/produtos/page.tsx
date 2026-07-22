@@ -1,7 +1,40 @@
+import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "../components/ScrollReveal";
+import { OG_IMAGE, SITE_URL } from "../lib/constants";
+
+const description =
+  "Conheça o portfólio Cardiomed: marca-passos, cardiodesfibriladores implantáveis, sistemas de ressincronização cardíaca, mapeamento eletroanatômico, cateteres de eletrofisiologia, oclusores cardíacos e stents das melhores marcas do mundo.";
+
+export const metadata: Metadata = {
+  title: "Produtos",
+  description,
+  alternates: {
+    canonical: "/produtos",
+  },
+  openGraph: {
+    title: "Produtos | Cardiomed",
+    description,
+    url: "/produtos",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    title: "Produtos | Cardiomed",
+    description,
+    images: [OG_IMAGE.url],
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Produtos", item: `${SITE_URL}/produtos` },
+  ],
+};
 
 type Product = {
   name: string;
@@ -184,6 +217,12 @@ function CategorySection({
 export default function ProdutosPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Navbar />
 
       <main

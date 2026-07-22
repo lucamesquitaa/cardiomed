@@ -1,6 +1,39 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import ScrollReveal from "../components/ScrollReveal";
+import { OG_IMAGE, SITE_URL } from "../lib/constants";
+
+const description =
+  "Há mais de 25 anos a Cardiomed é referência em tecnologia médico-hospitalar para cardiologia, unindo inovação, suporte especializado e parcerias com os maiores fabricantes do mundo.";
+
+export const metadata: Metadata = {
+  title: "Sobre",
+  description,
+  alternates: {
+    canonical: "/sobre",
+  },
+  openGraph: {
+    title: "Sobre | Cardiomed",
+    description,
+    url: "/sobre",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    title: "Sobre | Cardiomed",
+    description,
+    images: [OG_IMAGE.url],
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Sobre", item: `${SITE_URL}/sobre` },
+  ],
+};
 
 const diretores = [
   "/images/fotos-diretores/Foto-11_3x4.jpg",
@@ -92,6 +125,12 @@ function OrgCard({
 export default function SobrePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Navbar />
 
       <main className="overflow-hidden pt-[72px]">

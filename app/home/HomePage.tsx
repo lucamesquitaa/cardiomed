@@ -79,9 +79,9 @@ export default function HomePage() {
               <div className="hero-card-content flex flex-col justify-between items-center h-full">
 
               {/* Headline */}
-              <h2 className="text-white text-[1.6rem] sm:text-[1.85rem] md:text-[2.1rem] font-bold leading-[1.15] tracking-tight mb-4 md:mb-6">
+              <h1 className="text-white text-[1.6rem] sm:text-[1.85rem] md:text-[2.1rem] font-bold leading-[1.15] tracking-tight mb-4 md:mb-6">
                 Excelência e cuidado que salvam vidas
-              </h2>
+              </h1>
 
               {/* Body */}
               <p className="text-white/88 text-[0.85rem] sm:text-[0.95rem] leading-relaxed mb-4">

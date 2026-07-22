@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Lora } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   title: "Cardiomed - Excelência em saúde, cuidado para a vida",
   description:
     "Há mais de 25 anos a Cardiomed oferece qualidade de vida e bem-estar a pacientes cardíacos.",
+};
+
+export const viewport: Viewport = {
+  colorScheme: "light",
 };
 
 export default function RootLayout({

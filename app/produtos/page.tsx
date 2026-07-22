@@ -1,8 +1,20 @@
 import Navbar from "../components/Navbar";
 import Link from "next/link";
+import Image from "next/image";
 import ScrollReveal from "../components/ScrollReveal";
 
-const categories = [
+type Product = {
+  name: string;
+  description: string;
+  image?: string;
+};
+
+const categories: {
+  icon: React.ReactNode;
+  title: string;
+  intro: string;
+  items: Product[];
+}[] = [
   {
     icon: (
       <svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
@@ -10,21 +22,26 @@ const categories = [
       </svg>
     ),
     title: "Dispositivos implantáveis de estimulação",
+    intro:
+      "Marca-passos, cardiodesfibriladores e sistemas de ressincronização das melhores marcas do mundo.",
     items: [
       {
         name: "Linha Bradicardia",
         description:
           "Marca-passos e eletrodos voltados ao tratamento de ritmos cardíacos lentos, restaurando a frequência adequada.",
+        image: "/images/img-products1.png",
       },
       {
         name: "Linha Taquicardia",
         description:
           "Cardiodesfibriladores implantáveis (CDIs) e eletrodos para detectar e tratar ritmos acelerados e arritmias potencialmente fatais.",
+        image: "/images/img-products3.png",
       },
       {
         name: "Ressincronização Cardíaca",
         description:
           "Dispositivos (TRC) que coordenam a contração das câmaras cardíacas em pacientes com insuficiência cardíaca, muitas vezes combinando funções de estimulação e desfibrilação.",
+        image: "/images/img-products8.jpg",
       },
     ],
   },
@@ -35,16 +52,26 @@ const categories = [
       </svg>
     ),
     title: "Diagnóstico e monitoramento",
+    intro:
+      "Sistemas de mapeamento eletroanatômico e soluções de acompanhamento para localizar e monitorar arritmias com precisão.",
     items: [
       {
         name: "Monitoramento Cardíaco",
         description:
           "Monitores implantáveis e soluções de acompanhamento remoto para vigilância contínua do ritmo cardíaco.",
+        image: "/images/img-products2.jpg",
       },
       {
         name: "Mapeamento Cardíaco",
         description:
           "Sistemas e cateteres de mapeamento eletroanatômico que localizam com precisão a origem das arritmias antes da intervenção.",
+        image: "/images/img-prodcuts5.png",
+      },
+      {
+        name: "HIPEC",
+        description:
+          "Sistema de Quimioterapia Intraperitoneal Hipertérmica (HIPEC), utilizado no tratamento de tumores peritoneais.",
+        image: "/images/hipec.jpg",
       },
     ],
   },
@@ -55,43 +82,80 @@ const categories = [
       </svg>
     ),
     title: "Procedimentos e intervenção",
+    intro:
+      "Cateteres, stents e ferramentas específicas para os principais procedimentos de intervenção cardíaca.",
     items: [
       {
         name: "Linha Eletrofisiológica",
         description:
           "Cateteres de diagnóstico e ablação usados nos estudos e tratamentos das arritmias.",
+        image: "/images/img-products4.png",
       },
-      {
-        name: "Angioplastia",
-        description: "Stents para tratamento de obstruções arteriais coronarianas.",
-      },
+      // {
+      //   name: "Angioplastia",
+      //   description: "Stents para tratamento de obstruções arteriais coronarianas.",
+      //   image: "/images/img-products6.png",
+      // },
       {
         name: "Extração de Eletrodos",
         description:
           "Ferramentas específicas para remoção segura de eletrodos previamente implantados.",
+        image: "/images/img-products9.jpg",
       },
       {
-        name: "Oclusores Cardíacos",
+        name: "Oclusores Cardíacos e Stents",
         description:
           "Dispositivos de oclusão para fechamento de estruturas cardíacas (como o apêndice atrial esquerdo) e sistemas auxiliares de medição e liberação.",
+        image: "/images/img-products7.png",
       },
     ],
   },
 ];
 
-function ProductCard({
+function ProductItem({ name, description, image }: Product) {
+  if (image) {
+    return (
+      <div className="product-item group/item relative rounded-2xl bg-white/95 overflow-hidden flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-2xl">
+        <div className="relative h-36 sm:h-40 w-full bg-white flex items-center justify-center p-4">
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-contain p-4"
+            sizes="(max-width: 768px) 90vw, 260px"
+          />
+        </div>
+        <div className="px-5 py-4 border-t border-black/[0.06]">
+          <p className="text-gray-900 font-semibold text-[0.88rem] mb-1">{name}</p>
+          <p className="text-gray-500 text-[0.78rem] leading-relaxed">{description}</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="product-item-plain relative rounded-2xl p-5 flex flex-col justify-center transition-all duration-300 ease-out hover:-translate-y-1">
+      <p className="text-white font-semibold text-[0.88rem] mb-1.5">{name}</p>
+      <p className="text-white/55 text-[0.78rem] leading-relaxed">{description}</p>
+    </div>
+  );
+}
+
+function CategorySection({
   icon,
   title,
+  intro,
   items,
 }: {
   icon: React.ReactNode;
   title: string;
-  items: { name: string; description: string }[];
+  intro: string;
+  items: Product[];
 }) {
   return (
-    <div className="product-card group relative rounded-2xl p-8 flex flex-col gap-6 transition-all duration-300 ease-out hover:-translate-y-1.5 cursor-default overflow-hidden">
-      {/* Icon + title */}
-      <div className="flex items-center gap-4">
+    <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 lg:gap-10">
+      {/* Category header */}
+      <div className="flex flex-row lg:flex-col items-start gap-4 lg:gap-5">
         <div
           className="flex h-14 w-14 items-center justify-center rounded-xl text-white shrink-0"
           style={{
@@ -101,24 +165,16 @@ function ProductCard({
         >
           {icon}
         </div>
-        <h3 className="text-white group-hover:text-gray-900 font-semibold text-lg leading-snug transition-colors duration-300">
-          {title}
-        </h3>
+        <div>
+          <h3 className="text-white font-semibold text-lg leading-snug mb-2">{title}</h3>
+          <p className="text-white/55 text-[0.82rem] leading-relaxed">{intro}</p>
+        </div>
       </div>
 
-      <div className="card-divider h-px w-full transition-colors duration-300" />
-
-      {/* Sub-topics */}
-      <div className="flex flex-col gap-4">
+      {/* Items */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         {items.map((item) => (
-          <div key={item.name}>
-            <p className="text-white group-hover:text-gray-900 font-semibold text-[0.9rem] mb-1 transition-colors duration-300">
-              {item.name}
-            </p>
-            <p className="text-white/55 group-hover:text-gray-500 text-[0.82rem] leading-relaxed transition-colors duration-300">
-              {item.description}
-            </p>
-          </div>
+          <ProductItem key={item.name} {...item} />
         ))}
       </div>
     </div>
@@ -159,8 +215,6 @@ export default function ProdutosPage() {
           </div>
 
           <div className="relative z-10 max-w-2xl mx-auto px-8 text-center">
-         
-
             <h1 className="text-4xl font-bold text-white leading-tight mb-5 tracking-tight">
               Nossos{" "}Produtos
             </h1>
@@ -172,16 +226,14 @@ export default function ProdutosPage() {
               <strong className="text-white/90 font-semibold">melhores marcas do mundo</strong>{" "}
               e suporte técnico especializado.
             </p>
-
-            
           </div>
         </section>
 
-        {/* ── GRID ─────────────────────────────────────────── */}
+        {/* ── CATEGORIES ───────────────────────────────────── */}
         <section className="pb-20 pt-4">
           <div className="max-w-6xl mx-auto px-8">
             {/* Section header */}
-            <div className="flex items-center justify-center gap-5 mb-10">
+            <div className="flex items-center justify-center gap-5 mb-14">
               <div className="h-px flex-1 max-w-[80px]" style={{ background: "rgba(255,255,255,0.18)" }} />
               <h2 className="text-sm font-semibold text-white/55 tracking-[0.18em] uppercase">
                 Nossas linhas de Produtos
@@ -189,11 +241,19 @@ export default function ProdutosPage() {
               <div className="h-px flex-1 max-w-[80px]" style={{ background: "rgba(255,255,255,0.18)" }} />
             </div>
 
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 items-start">
+            <div className="flex flex-col gap-14">
               {categories.map((cat, index) => (
-                <ScrollReveal key={cat.title} delay={index * 150}>
-                  <ProductCard {...cat} />
-                </ScrollReveal>
+                <div key={cat.title}>
+                  <ScrollReveal delay={index * 120}>
+                    <CategorySection {...cat} />
+                  </ScrollReveal>
+                  {index < categories.length - 1 && (
+                    <div
+                      className="h-px w-full mt-14"
+                      style={{ background: "rgba(255,255,255,0.09)" }}
+                    />
+                  )}
+                </div>
               ))}
             </div>
           </div>
@@ -214,7 +274,7 @@ export default function ProdutosPage() {
               Nossa equipe está pronta para apresentar os produtos certos para a sua necessidade.
             </p>
             <Link
-              href="/contato"
+              href="/#contato"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
               style={{
                 background: "linear-gradient(135deg, #2ea55e 0%, #336B41 100%)",

@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  color-scheme: light only;
 }
 
 @theme inline {
@@ -132,4 +133,15 @@ body {
 .product-card:hover .card-badge {
   background: rgba(46,165,94,0.10);
   border-color: rgba(46,165,94,0.28);
+}
+
+.product-item-plain {
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.22);
+}
+
+.product-item-plain:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.16);
 }

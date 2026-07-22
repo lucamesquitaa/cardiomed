@@ -1,5 +1,50 @@
+import Image from "next/image";
 import Navbar from "../components/Navbar";
 import ScrollReveal from "../components/ScrollReveal";
+
+const diretores = [
+  "/images/fotos-diretores/Foto-11_3x4.jpg",
+  "/images/fotos-diretores/Foto-14_3x4.jpg",
+  "/images/fotos-diretores/Foto-17_3x4.jpg",
+];
+
+const funcionarios = [
+  "/images/fotos-funcionarios/Foto-4_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-34_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-36_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-37_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-38_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-50_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-51_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-53_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-55_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-62_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-69_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-71_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-75_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-82_3x4.jpg",
+  "/images/fotos-funcionarios/Foto-88_3x4.jpg",
+];
+
+function PersonCard({ photo }: { photo: string }) {
+  return (
+    <div className="rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm flex flex-col">
+      <div className="relative w-full" style={{ aspectRatio: "3 / 4" }}>
+        <Image
+          src={photo}
+          alt="Nome completo"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 45vw, 200px"
+        />
+      </div>
+      <div className="px-4 py-3 text-center">
+        <p className="text-gray-900 font-semibold text-sm mb-0.5">Nome completo</p>
+        <p className="text-emerald-700 text-xs font-medium">Cargo</p>
+      </div>
+    </div>
+  );
+}
 
 function OrgCard({
   name,
@@ -116,8 +161,41 @@ export default function SobrePage() {
           </div>
         </section>
 
-        {/* ── MISSÃO, VISÃO E VALORES ───────────────────────── */}
+        {/* ── DIRETORIA E EQUIPE ─────────────────────────────── */}
         <section className="bg-white pb-24">
+          <div className="max-w-5xl mx-auto px-8">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-gray-900">Diretoria</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-16">
+              {diretores.map((photo) => (
+                <PersonCard key={photo} photo={photo} />
+              ))}
+            </div>
+
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-gray-900">Equipe</h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              {funcionarios.map((photo) => (
+                <PersonCard key={photo} photo={photo} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── MISSÃO, VISÃO E VALORES ───────────────────────── */}
+        <section
+          className="pb-24"
+          style={{
+            backgroundColor: "#ffffff",
+            backgroundImage:
+              "repeating-linear-gradient(to bottom, transparent 0px, transparent 47px, rgba(33,109,66,0.14) 47px, rgba(33,109,66,0.14) 48px)",
+          }}
+        >
+          <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-gray-900">Nossa cultura</h2>
+            </div>
           <div className="max-w-5xl mx-auto px-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
             <ScrollReveal delay={0}>
               <MvvCard

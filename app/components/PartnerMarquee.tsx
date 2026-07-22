@@ -14,7 +14,6 @@ const partners = [
 
 // 4 copies ensures the track is wide enough for any common viewport
 const COPIES = 4;
-const GAP_PX = 80; // 5rem
 const SPEED = 0.6; // px per frame @ ~60 fps ≈ 36 px/s
 
 export default function PartnerMarquee() {
@@ -67,8 +66,8 @@ export default function PartnerMarquee() {
             alt={p.alt}
             width={p.w}
             height={p.h}
-            className="flex-shrink-0 opacity-90 hover:opacity-100 transition-opacity duration-300"
-            style={{ width: `${p.w}px`, height: `${p.h}px`, objectFit: 'contain', marginRight: `${GAP_PX}px` }}
+            className="flex-shrink-0 opacity-90 hover:opacity-100 transition-opacity duration-300 mr-8 md:mr-20"
+            style={{ width: `${p.w}px`, height: `${p.h}px`, objectFit: 'contain' }}
           />
         ))}
       </div>

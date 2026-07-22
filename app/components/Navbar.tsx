@@ -8,8 +8,7 @@ import { useEffect, useState } from "react";
 const links = [
   { label: "Home", href: "/" },
   { label: "Sobre", href: "/sobre" },
-  { label: "Produtos", href: "/produtos" },
-  { label: "Contato", href: "/contato" },
+  { label: "Produtos", href: "/produtos" }
 ];
 
 export default function Navbar() {
@@ -38,7 +37,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
         scrolled || menuOpen
-          ? "bg-white/60 backdrop-blur-md border-gray-100/50"
+          ? "bg-white/90 backdrop-blur-md border-gray-100/50"
           : "bg-white backdrop-blur-sm border-gray-100"
       }`}
     >

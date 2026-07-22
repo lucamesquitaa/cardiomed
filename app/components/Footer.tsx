@@ -5,7 +5,6 @@ const links = [
   { label: "Home", href: "/" },
   { label: "Sobre", href: "/sobre" },
   { label: "Produtos", href: "/produtos" },
-  { label: "Contato", href: "/contato" },
 ];
 
 export default function Footer() {
@@ -14,24 +13,21 @@ export default function Footer() {
       {/* Accent bar */}
       <div style={{ background: "#336B41" }} className="h-1" />
 
-      <div className="max-w-7xl mx-auto px-8 py-14 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-8 py-12 grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
 
         {/* ── Marca ── */}
-        <div className="flex flex-col gap-2 align-start items-center">
+        <div className="col-span-2 lg:col-span-1 flex flex-col justify-center gap-3 items-center">
           <Link href="/" className="inline-block w-fit">
             <Image
               src="/images/logo2.png"
               alt="Cardiomed"
-              width={170}
-              height={130}
-              className="w-auto"
+              width={130}
+              height={120}
             />
           </Link>
 
-          <p className="text-sm text-black/65 leading-relaxed max-w-[260px]">
-            Há mais de 25 anos, a CardioMed traz ao
-Brasil o que há de mais avançado no mundo
-em soluções de tecnologia cardíaca.
+          <p className="text-sm text-black/65 max-w-[250px]">
+            Há mais de 25 anos, a CardioMed distribui produtos médicos de alta qualidade.
           </p>
 
           {/* Social icons */}
@@ -74,19 +70,18 @@ em soluções de tecnologia cardíaca.
           </div>
         </div>
 
-        {/* ── Navegação ── */}
-        <div>
-          <h3 className="text-[11px] font-bold uppercase tracking-[0.22em] text-black/40 mb-6">
-            Navegação
+        {/* ── Links ── */}
+        <div className="hidden lg:block">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-black/70 mb-3">
+            Links
           </h3>
-          <ul className="space-y-3">
+          <ul className="space-y-2 text-sm">
             {links.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="group flex items-center gap-2.5 text-sm text-black/65 hover:text-[#336B41] transition-colors duration-200"
+                  className="text-black/65 hover:text-[#336B41] transition-colors"
                 >
-                  <span className="block h-px w-4 bg-black/25 group-hover:w-6 group-hover:bg-[#336B41] transition-all duration-200" />
                   {link.label}
                 </Link>
               </li>
@@ -94,39 +89,41 @@ em soluções de tecnologia cardíaca.
           </ul>
         </div>
 
-        {/* ── Contato + Mapa ── */}
-        <div>
-          <h3 className="text-[11px] font-bold uppercase tracking-[0.22em] text-black/40 mb-6">
+        {/* ── Contato ── */}
+        <div className="hidden lg:block">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-black/70 mb-3">
             Contato
           </h3>
-          <address className="not-italic space-y-4 mb-6">
-            <p className="flex items-start gap-2.5 text-sm text-black/65">
-              <svg className="w-4 h-4 mt-0.5 shrink-0 text-[#336B41]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <span>
-                Av. do Contorno, 2646<br />
-                Santa Efigênia, Belo Horizonte - MG<br />
-                CEP 30110-017
-              </span>
-            </p>
-            <p className="flex items-center gap-2.5 text-sm text-black/65">
-              <svg className="w-4 h-4 shrink-0 text-[#336B41]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              <a href="tel:+553132417101" className="hover:text-[#336B41] transition-colors duration-200">
+          <ul className="space-y-2 text-sm text-black/65">
+            <li>
+              <a href="tel:+553132417101" className="hover:text-[#336B41] transition-colors">
                 (31) 3241-7101
               </a>
-            </p>
-          </address>
+            </li>
+            <li>
+              <a
+                href="mailto:contato@cardiomed.com.br"
+                className="hover:text-[#336B41] transition-colors break-all"
+              >
+                contato@cardiomed.com.br
+              </a>
+            </li>
+            <li>Av. do Contorno, 2646 (sala 1305)<br />Belo Horizonte, MG</li>
+          </ul>
+        </div>
+
+        {/* ── Mapa ── */}
+        <div className="col-span-2 lg:col-span-1">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-black/70 mb-3">
+            Como chegar
+          </h3>
 
           <div className="rounded-xl overflow-hidden border border-black/15 shadow-md">
             <iframe
               title="Localização Cardiomed"
               src="https://maps.google.com/maps?q=Av.+do+Contorno+2646+Santa+Efig%C3%AAnia+Belo+Horizonte+MG+30110-017&output=embed&hl=pt-BR"
               width="100%"
-              height="160"
+              height="140"
               style={{ border: 0, display: "block" }}
               allowFullScreen={false}
               loading="lazy"
@@ -139,12 +136,9 @@ em soluções de tecnologia cardíaca.
 
       {/* Bottom bar */}
       <div className="border-t border-black/10">
-        <div className="max-w-7xl mx-auto px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-8 py-4 text-center">
           <p className="text-black/40 text-xs">
             © {new Date().getFullYear()} Cardiomed. Todos os direitos reservados.
-          </p>
-          <p className="text-black/30 text-xs">
-            CNPJ: — · Av. do Contorno, 2646 — Belo Horizonte, MG
           </p>
         </div>
       </div>

@@ -5,6 +5,43 @@ import PartnerMarquee from "../components/PartnerMarquee";
 import MeetingScheduleForm from "../components/MeetingScheduleForm";
 import ScrollReveal from "../components/ScrollReveal";
 
+function InfoCard({
+  icon,
+  title,
+  children,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div
+      className="flex items-start gap-4 rounded-2xl p-5"
+      style={{
+        background: "rgba(255,255,255,0.9)",
+        border: "1px solid rgba(26, 89, 52, 0.32)",
+        boxShadow: "0 4px 14px rgba(0,0,0,0.08)",
+      }}
+    >
+      <div
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white"
+        style={{
+          background: "linear-gradient(135deg, #238d4d 0%, #0c3b20 100%)",
+          boxShadow: "0 4px 14px rgba(26,89,52,0.3)",
+        }}
+      >
+        {icon}
+      </div>
+      <div>
+        <p className="mb-0.5 text-xs font-semibold uppercase tracking-widest text-green-cardiomed/70">
+          {title}
+        </p>
+        <div className="text-sm leading-relaxed text-gray-700">{children}</div>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -145,11 +182,7 @@ export default function HomePage() {
               className="absolute -top-24 -left-24 w-80 h-80 rounded-full"
               style={{ background: "radial-gradient(circle, rgba(33,109,66,0.12) 0%, transparent 70%)" }}
             />
-            {/* Medium blurred circle — bottom right */}
-            <div
-              className="absolute -bottom-20 right-1/4 w-64 h-64 rounded-full"
-              style={{ background: "radial-gradient(circle, rgba(33,109,66,0.09) 0%, transparent 70%)" }}
-            />
+           
             {/* Small accent circle — mid left */}
             <div
               className="absolute top-1/2 -left-10 w-36 h-36 rounded-full -translate-y-1/2"
@@ -220,7 +253,7 @@ export default function HomePage() {
                 style={{ filter: "drop-shadow(0 20px 48px rgba(0, 0, 0, 0.50))" }}
               >
                 <Image
-                  src="/images/team.png"
+                  src="/images/diretores-grupo.jpg"
                   alt="Equipe Cardiomed"
                   width={600}
                   height={300}
@@ -232,7 +265,92 @@ export default function HomePage() {
 
         </section>
 
-        {/* ── AGENDAMENTO ────────────────────────────────────── 
+        {/* ── CONTATO ────────────────────────────────────────── */}
+        <section id="contato" className="relative bg-white py-16 sm:py-20">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8">
+              {/* Decorative green dots */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 2 }}>
+            {/* Dot grid — top right */}
+            <div
+              className="absolute top-2 right-10 w-32 h-32 opacity-50"
+              style={{
+                backgroundImage: "radial-gradient(circle, #216d42 1.8px, transparent 1.8px)",
+                backgroundSize: "42px 42px",
+              }}
+            />
+          </div>
+            <div className="rounded-3xl border border-gray-200 shadow-xl shadow-gray-200/60 p-6 sm:p-10">
+            <div className="mb-10 sm:mb-14 text-center">
+              <h2 className="mb-4 text-3xl sm:text-4xl font-bold leading-tight text-gray-900">
+                Entre em <em className="not-italic">Contato</em>
+              </h2>
+              <p className="mx-auto max-w-xl text-base sm:text-lg leading-relaxed text-gray-600">
+                Estamos prontos para atender você. Fale diretamente conosco pelos canais abaixo.
+              </p>
+            </div>
+
+            <div className="mx-auto max-w-4xl">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <InfoCard
+                  title="Endereço"
+                  icon={
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  }
+                >
+                  Av. do Contorno, 2646 (sala 1305) — Santa Efigênia
+                  <br />
+                  Belo Horizonte - MG · CEP 30110-017
+                </InfoCard>
+
+                <InfoCard
+                  title="Telefone"
+                  icon={
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  }
+                >
+                  <a className="hover:text-green-cardiomed transition-colors">
+                    (31) 3241-7101
+                  </a>
+                </InfoCard>
+
+                <InfoCard
+                  title="E-mail"
+                  icon={
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  }
+                >
+                  <a className="hover:text-green-cardiomed transition-colors">
+                    contato@cardiomed.com.br
+                  </a>
+                </InfoCard>
+
+                <InfoCard
+                  title="Horário de atendimento"
+                  icon={
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+                    </svg>
+                  }
+                >
+                  Segunda a Sexta: 8h às 18h
+                  <br />
+                  Sábado: 8h às 12h
+                </InfoCard>
+              </div>
+            </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── AGENDAMENTO ──────────────────────────────────────
         <section
           className="relative overflow-hidden py-20"
           style={{

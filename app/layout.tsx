@@ -84,7 +84,7 @@ const organizationJsonLd = {
   name: SITE_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/images/logo.png`,
-  image: `${SITE_URL}/images/hero.png`,
+  image: `${SITE_URL}/images/hero.jpg`,
   description,
   telephone: "+55-31-3241-7101",
   email: "contato@cardiomed.com.br",

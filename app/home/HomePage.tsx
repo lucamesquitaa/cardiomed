@@ -52,7 +52,7 @@ export default function HomePage() {
         <section className="relative min-h-[680px] h-[100svh] sm:h-screen flex items-center">
           {/* Background image */}
           <Image
-            src="/images/hero.png"
+            src="/images/hero.jpg"
             alt="Médicos em sala cirúrgica com equipamentos de monitoramento cardíaco"
             fill
             className="object-cover object-[75%_top] sm:object-left-top"

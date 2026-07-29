@@ -35,45 +35,51 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const diretores = [
-  "/images/fotos-diretores/Foto-11_3x4.jpg",
-  "/images/fotos-diretores/Foto-14_3x4.jpg",
-  "/images/fotos-diretores/Foto-17_3x4.jpg",
+type Person = {
+  photo: string;
+  name?: string;
+  role?: string;
+};
+
+const diretores: Person[] = [
+  { photo: "/images/fotos-diretores/Foto-14_3x4.jpg", name: "Pedro Capistrano", role: "Diretor Comercial" },
+  { photo: "/images/fotos-diretores/Foto-11_3x4.jpg", name: "Eliane Capistrano", role: "Diretora Executiva" },
+  { photo: "/images/fotos-diretores/Foto-17_3x4.jpg", name: "Victor Capistrano", role: "Diretor Técnico" },
 ];
 
-const funcionarios = [
-  "/images/fotos-funcionarios/Foto-4_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-34_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-36_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-37_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-38_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-50_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-51_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-53_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-55_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-62_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-69_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-71_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-75_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-82_3x4.jpg",
-  "/images/fotos-funcionarios/Foto-88_3x4.jpg",
+const funcionarios: Person[] = [
+  { photo: "/images/fotos-funcionarios/Foto-4_3x4.jpg", name: "Ubirajara Borges", role: "Assessor Técnico" },
+  { photo: "/images/fotos-funcionarios/Foto-34_3x4.jpg", name: "Jéssica Assis", role: "Financeiro" },
+  { photo: "/images/fotos-funcionarios/Foto-36_3x4.jpg", name: "Luiza Quadros", role: "Logística" },
+  { photo: "/images/fotos-funcionarios/Foto-38_3x4.jpg", name: "Marcelo Gomes", role: "Assessor Técnico" },
+  { photo: "/images/fotos-funcionarios/Foto-50_3x4.jpg", name: "Marlon Reis", role: "Assessor Técnico" },
+  { photo: "/images/fotos-funcionarios/Foto-51_3x4.jpg", name: "Jussara Bastos", role: "Administrativo" },
+  { photo: "/images/fotos-funcionarios/Foto-53_3x4.jpg", name: "Hélio Reis", role: "Logística" },
+  { photo: "/images/fotos-funcionarios/Foto-55_3x4.jpg", name: "Glaycon Carvalho", role: "Logística" },
+  { photo: "/images/fotos-funcionarios/Foto-62_3x4.jpg", name: "Thiago Rosa", role: "Gerente Geral" },
+  { photo: "/images/fotos-funcionarios/Foto-71_3x4.jpg", name: "Lincoln Santiago", role: "Assessor Técnico" },
+  { photo: "/images/fotos-funcionarios/Foto-75_3x4.jpg", name: "Thiago Fonseca", role: "Assessor Técnico" },
+  { photo: "/images/fotos-funcionarios/Foto-82_3x4.jpg", name: "Lucas Campolino", role: "Assessor Técnico" },
+  { photo: "/images/fotos-funcionarios/Foto-88_3x4.jpg", name: "Adalton Elerito", role: "Assessor Técnico" },
 ];
 
-function PersonCard({ photo }: { photo: string }) {
+function PersonCard({ photo, name, role }: Person) {
+  const displayName = name ?? "Nome completo";
+  const displayRole = role ?? "Cargo";
   return (
     <div className="rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm flex flex-col">
       <div className="relative w-full" style={{ aspectRatio: "3 / 4" }}>
         <Image
           src={photo}
-          alt="Nome completo"
+          alt={displayName}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 45vw, 200px"
         />
       </div>
       <div className="px-4 py-3 text-center">
-        <p className="text-gray-900 font-semibold text-sm mb-0.5">Nome completo</p>
-        <p className="text-emerald-700 text-xs font-medium">Cargo</p>
+        <p className="text-gray-900 font-semibold text-sm mb-0.5">{displayName}</p>
+        <p className="text-emerald-700 text-xs font-medium">{displayRole}</p>
       </div>
     </div>
   );
@@ -166,7 +172,7 @@ export default function SobrePage() {
                 </em>
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed">
-             Somos referência em tecnologia médico-hospitalar para cardiologia. Desde a nossa fundação,
+             Somos referência em tecnologia médico-hospitalar para cardiologia e oncologia. Desde a nossa fundação,
               unimos{" "}
               <strong className="text-gray-800 font-semibold">inovação</strong>,{" "}
               <strong className="text-gray-800 font-semibold">suporte especializado</strong> 
@@ -206,18 +212,22 @@ export default function SobrePage() {
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold text-gray-900">Diretoria</h2>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-16">
-              {diretores.map((photo) => (
-                <PersonCard key={photo} photo={photo} />
+            <div className="flex flex-wrap justify-center gap-6 mb-16">
+              {diretores.map((person) => (
+                <div key={person.photo} className="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)]">
+                  <PersonCard {...person} />
+                </div>
               ))}
             </div>
 
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold text-gray-900">Equipe</h2>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-              {funcionarios.map((photo) => (
-                <PersonCard key={photo} photo={photo} />
+            <div className="flex flex-wrap justify-center gap-6">
+              {funcionarios.map((person) => (
+                <div key={person.photo} className="w-[calc(50%-12px)] sm:w-[calc(25%-18px)]">
+                  <PersonCard {...person} />
+                </div>
               ))}
             </div>
           </div>
@@ -244,7 +254,7 @@ export default function SobrePage() {
                   </svg>
                 }
                 title="Missão"
-                text="Oferecer tecnologia médico-hospitalar de excelência para cardiologia, contribuindo para o cuidado e a qualidade de vida dos pacientes."
+                text="Oferecer tecnologia médico-hospitalar de excelência para cardiologia e oncologia, contribuindo para o cuidado e a qualidade de vida dos pacientes."
               />
             </ScrollReveal>
             <ScrollReveal delay={150}>
@@ -256,7 +266,7 @@ export default function SobrePage() {
                   </svg>
                 }
                 title="Visão"
-                text="Ser reconhecida como a principal referência em soluções para cardiologia, expandindo parcerias e inovação em todo o território nacional."
+                text="Ser reconhecida como a principal referência em soluções para cardiologia e oncologia, expandindo parcerias e inovação em todo o território nacional."
               />
             </ScrollReveal>
             <ScrollReveal delay={300}>

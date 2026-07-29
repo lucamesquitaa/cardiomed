@@ -261,7 +261,7 @@ export default function ProdutosPage() {
             <p className="text-white/65 text-[1.05rem] leading-relaxed">
               Portfólio completo de{" "}
               <strong className="text-white/90 font-semibold">tecnologia médico-hospitalar</strong>{" "}
-              para cardiologia, com equipamentos das{" "}
+              para cardiologia e oncologia, com equipamentos das{" "}
               <strong className="text-white/90 font-semibold">melhores marcas do mundo</strong>{" "}
               e suporte técnico especializado.
             </p>

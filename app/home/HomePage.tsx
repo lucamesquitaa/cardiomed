@@ -85,7 +85,7 @@ export default function HomePage() {
 
               {/* Body */}
               <p className="text-white/88 text-[0.85rem] sm:text-[0.95rem] leading-relaxed mb-4">
-                Há mais de 25 anos, a CardioMed traz ao Brasil o que há de mais avançado no mundo em soluções de tecnologia cardíaca.
+                Há mais de 25 anos, a Cardiomed traz ao Brasil o que há de mais avançado no mundo em soluções de tecnologia cardíaca e oncológica.
               </p>
 
               {/* CTA Button */}
@@ -341,8 +341,6 @@ export default function HomePage() {
                   }
                 >
                   Segunda a Sexta: 8h às 18h
-                  <br />
-                  Sábado: 8h às 12h
                 </InfoCard>
               </div>
             </div>

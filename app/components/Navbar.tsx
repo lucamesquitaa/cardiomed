@@ -37,7 +37,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
         scrolled || menuOpen
-          ? "bg-white/90 backdrop-blur-md border-gray-100/50"
+          ? "bg-white/80 backdrop-blur-md border-gray-100/50"
           : "bg-white backdrop-blur-sm border-gray-100"
       }`}
     >

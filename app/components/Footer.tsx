@@ -27,7 +27,7 @@ export default function Footer() {
           </Link>
 
           <p className="text-sm text-black/65 max-w-[250px]">
-            Há mais de 25 anos, a CardioMed distribui produtos médicos de alta qualidade.
+            Há mais de 25 anos, a Cardiomed distribui produtos médicos de alta qualidade.
           </p>
 
           {/* Social icons */}

@@ -228,7 +228,7 @@ export default function HomePage() {
               </h2>
 
               <p className="text-black/80 leading-relaxed text-base sm:text-lg">
-                A CardioMed transforma{" "}
+                A Cardiomed transforma{" "}
                 <strong className="text-black font-semibold">tecnologia de ponta</strong> em qualidade de vida com{" "}
                 <strong className="text-black font-semibold">soluções</strong> médico-hospitalares que devolvem{" "}
                 <strong className="text-black font-semibold">o ritmo e o futuro</strong> a pacientes cardíacos e suas famílias.

@@ -124,11 +124,11 @@ const categories: {
           "Cateteres de diagnóstico e ablação usados nos estudos e tratamentos das arritmias.",
         image: "/images/img-products4.png",
       },
-      // {
-      //   name: "Angioplastia",
-      //   description: "Stents para tratamento de obstruções arteriais coronarianas.",
-      //   image: "/images/img-products6.png",
-      // },
+       {
+         name: "Angioplastia",
+         description: "Stents para expandir uma artéria cardíaca, melhorar o fluxo sanguíneo e manter a oxigenação dos tecidos.",
+        image: "/images/img-products6.png",
+      },
       {
         name: "Extração de Eletrodos",
         description:

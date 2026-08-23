@@ -46,10 +46,10 @@ export default function Navbar() {
           <Image
             src="/images/logo.png"
             alt="Cardiomed"
-            width={170}
-            height={22}
+            width={10}
+            height={10}
             priority
-            className="h-12 md:h-14 w-auto"
+            className="h-10 md:h-10 w-auto"
           />
         </Link>
         <ul className="hidden md:flex items-center gap-10">

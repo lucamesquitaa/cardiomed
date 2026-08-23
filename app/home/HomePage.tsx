@@ -199,7 +199,7 @@ export default function HomePage() {
 
           {/* Content */}
           <div
-            className="relative max-w-6xl mx-auto px-6 sm:px-8 py-16 sm:py-24 lg:py-[148px] grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+            className="relative max-w-6xl mx-auto px-6 sm:px-8 py-16 sm:py-24 lg:py-[138px] grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
             style={{ zIndex: 10 }}
           >
             {/* Text */}
@@ -266,7 +266,7 @@ export default function HomePage() {
         </section>
 
         {/* ── CONTATO ────────────────────────────────────────── */}
-        <section id="contato" className="relative bg-white py-16 sm:py-20">
+        <section id="contato" className="relative bg-white p-6 sm:py-20">
           <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8">
               {/* Decorative green dots */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 2 }}>
@@ -279,7 +279,7 @@ export default function HomePage() {
               }}
             />
           </div>
-            <div className="rounded-3xl border border-gray-200 shadow-xl shadow-gray-200/60 p-6 sm:p-10">
+            <div className="rounded-3xl border border-gray-200 shadow-xl shadow-gray-200/60 p-6 sm:p-10 bg-gray-200 backdrop-blur-md">
             <div className="mb-10 sm:mb-14 text-center">
               <h2 className="mb-4 text-3xl sm:text-4xl font-bold leading-tight text-gray-900">
                 Entre em <em className="not-italic">Contato</em>

@@ -49,20 +49,20 @@ const diretores: Person[] = [
 
 const funcionarios: Person[] = [
   { photo: "/images/fotos-funcionarios/Foto-34_3x4.jpg", name: "Jéssica Assis", role: "Supervisora Financeiro" },
-  { photo: "/images/fotos-funcionarios/Foto-36_3x4.jpg", name: "Luiza Quadros", role: "Supervisora Logística" },
+  { photo: "/images/fotos-funcionarios/Foto-36_3x4.jpg", name: "Luiza Quadros", role: "Supervisora de Logística" },
 
   { photo: "/images/fotos-funcionarios/Foto-62_3x4.jpg", name: "Thiago Chagas", role: "Gerente Geral" },
 
-  { photo: "/images/fotos-funcionarios/Foto-75_3x4.jpg", name: "Thiago Fonseca", role: "Vendedor Técnico" },
+  { photo: "/images/fotos-funcionarios/Foto-75_3x4.jpg", name: "Thiago Fonseca", role: "Vendedor Assessor Técnico em Dispositivos de Estimulação Cardíaca" },
 
-  { photo: "/images/fotos-funcionarios/Foto-71_3x4.jpg", name: "Lincoln Santiago", role: "Supervisor" },
+  { photo: "/images/fotos-funcionarios/Foto-71_3x4.jpg", name: "Lincoln Santiago", role: "Supervisor Assessor Técnico em Dispositivos de Estimulação Cardíaca" },
 
   { photo: "/images/fotos-funcionarios/Foto-4_3x4.jpg", name: "Ubirajara Borges", role: "Especialista de Produtos" },
 
-  { photo: "/images/fotos-funcionarios/Foto-38_3x4.jpg", name: "Marcelo Gomes", role: "Assessor Técnico" },
-  { photo: "/images/fotos-funcionarios/Foto-50_3x4.jpg", name: "Marlon Regis", role: "Assessor Técnico" },
-  { photo: "/images/fotos-funcionarios/Foto-88_3x4.jpg", name: "Adalton Elerito", role: "Assessor Técnico" },
-  { photo: "/images/fotos-funcionarios/Foto-82_3x4.jpg", name: "Lucas Campolino", role: "Assessor Técnico" },
+  { photo: "/images/fotos-funcionarios/Foto-38_3x4.jpg", name: "Marcelo Gomes", role: "Assessor Técnico em Dispositivos de Estimulação Cardíaca" },
+  { photo: "/images/fotos-funcionarios/Foto-50_3x4.jpg", name: "Marlon Regis", role: "Assessor Técnico em Dispositivos de Estimulação Cardíaca" },
+  { photo: "/images/fotos-funcionarios/Foto-88_3x4.jpg", name: "Adalton Elerito", role: "Assessor Técnico em Dispositivos de Estimulação Cardíaca" },
+  { photo: "/images/fotos-funcionarios/Foto-82_3x4.jpg", name: "Lucas Campolino", role: "Assessor Técnico em Dispositivos de Estimulação Cardíaca" },
 
   { photo: "/images/fotos-funcionarios/Foto-51_3x4.jpg", name: "Jussara Bastos", role: "Administrativo" },
 
@@ -221,12 +221,15 @@ export default function SobrePage() {
               <h2 className="text-3xl font-bold text-gray-900">Diretoria</h2>
             </div>
             <div className="flex flex-col items-center gap-6 sm:flex-row sm:flex-wrap sm:justify-center mb-16">
-              <div className="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)]">
+              <div className="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] sm:order-2">
                 <PersonCard {...diretores[0]} />
               </div>
               <div className="flex gap-6 sm:contents">
-                {diretores.slice(1).map((person) => (
-                  <div key={person.photo} className="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)]">
+                {diretores.slice(1).map((person, i) => (
+                  <div
+                    key={person.photo}
+                    className={`w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] ${i === 0 ? "sm:order-1" : "sm:order-3"}`}
+                  >
                     <PersonCard {...person} />
                   </div>
                 ))}
@@ -238,7 +241,7 @@ export default function SobrePage() {
             </div>
             <div className="flex flex-wrap justify-center gap-6">
               {funcionarios.map((person) => (
-                <div key={person.photo} className="w-[calc(50%-12px)] sm:w-[calc(25%-18px)]">
+                <div key={person.photo} className="w-[calc(50%-12px)] sm:w-[calc(20%-19.2px)]">
                   <PersonCard {...person} />
                 </div>
               ))}

@@ -16,7 +16,7 @@ function InfoCard({
 }) {
   return (
     <div
-      className="flex items-start gap-4 rounded-2xl p-5"
+      className="flex items-start gap-3 rounded-2xl p-4 sm:gap-4 sm:p-5"
       style={{
         background: "rgba(255,255,255,0.9)",
         border: "1px solid rgba(26, 89, 52, 0.32)",
@@ -32,11 +32,11 @@ function InfoCard({
       >
         {icon}
       </div>
-      <div>
+      <div className="min-w-0">
         <p className="mb-0.5 text-xs font-semibold uppercase tracking-widest text-green-cardiomed/70">
           {title}
         </p>
-        <div className="text-sm leading-relaxed text-gray-700">{children}</div>
+        <div className="text-xs sm:text-sm leading-relaxed text-gray-700 break-words">{children}</div>
       </div>
     </div>
   );
@@ -266,8 +266,8 @@ export default function HomePage() {
         </section>
 
         {/* ── CONTATO ────────────────────────────────────────── */}
-        <section id="contato" className="relative bg-white p-6 sm:py-20">
-          <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8">
+        <section id="contato" className="relative bg-white px-3 py-6 sm:px-6 sm:py-20">
+          <div className="relative z-10 max-w-7xl mx-auto px-0 sm:px-8">
               {/* Decorative green dots */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 2 }}>
             {/* Dot grid — top right */}
@@ -279,7 +279,7 @@ export default function HomePage() {
               }}
             />
           </div>
-            <div className="rounded-3xl border border-gray-200 shadow-xl shadow-gray-200/60 p-6 sm:p-10 bg-gray-200 backdrop-blur-md">
+            <div className="rounded-3xl border border-gray-200 shadow-xl shadow-gray-200/60 p-4 sm:p-10 bg-gray-200 backdrop-blur-md">
             <div className="mb-10 sm:mb-14 text-center">
               <h2 className="mb-4 text-3xl sm:text-4xl font-bold leading-tight text-gray-900">
                 Entre em <em className="not-italic">Contato</em>
@@ -300,8 +300,7 @@ export default function HomePage() {
                     </svg>
                   }
                 >
-                  Av. do Contorno, 2646 (sala 1305) — Santa Efigênia
-                  <br />
+                  Av. do Contorno, 2646 (sala 1305)<br /> Bairro Santa Efigênia. <br />
                   Belo Horizonte - MG · CEP 30110-017
                 </InfoCard>
 

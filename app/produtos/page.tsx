@@ -136,7 +136,7 @@ const categories: {
         image: "/images/img-products9.jpg",
       },
       {
-        name: "Oclusores Cardíacos e Stents",
+        name: "Oclusores Cardíacos",
         description:
           "Dispositivos de oclusão para fechamento de estruturas cardíacas (como o apêndice atrial esquerdo) e sistemas auxiliares de medição e liberação.",
         image: "/images/img-products7.png",

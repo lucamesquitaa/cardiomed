@@ -131,7 +131,7 @@ export default function HomePage() {
         <section
           id="partners"
           style={{
-            background: "linear-gradient(160deg, #5c8967 0%, #336b41 45%, #21462a 100%)",
+            background: "linear-gradient(160deg, #2b6d55 0%, #23604A 45%, #184434 100%)",
           }}
           className="py-14 sm:py-20"
         >

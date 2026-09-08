@@ -193,7 +193,7 @@ export default function HomePage() {
           {/* Top wave — green cap from partners section */}
           <div className="absolute top-0 left-0 right-0" style={{ zIndex: 3 }}>
             <svg viewBox="0 0 1440 90" className="w-full block" preserveAspectRatio="none">
-              <path d="M0,0 C480,90 960,0 1440,70 L1440,0 Z" fill="#2c693b" />
+              <path d="M0,0 C480,90 960,0 1440,70 L1440,0 Z" fill="#23604A" />
             </svg>
           </div>
 

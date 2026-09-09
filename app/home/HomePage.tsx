@@ -326,7 +326,7 @@ export default function HomePage() {
                   }
                 >
                   <a className="hover:text-green-cardiomed transition-colors">
-                    contato@cardiomed.com.br
+                    recepcao@cardiomedbh.com.br
                   </a>
                 </InfoCard>
 
@@ -339,7 +339,7 @@ export default function HomePage() {
                     </svg>
                   }
                 >
-                  Segunda a Sexta: 8h às 18h
+                  Segunda a Sexta: 8h às 17h
                 </InfoCard>
               </div>
             </div>

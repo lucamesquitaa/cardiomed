@@ -19,15 +19,15 @@ function InfoCard({
       className="flex items-start gap-3 rounded-2xl p-4 sm:gap-4 sm:p-5"
       style={{
         background: "rgba(255,255,255,0.9)",
-        border: "1px solid rgba(26, 89, 52, 0.32)",
+        border: "1px solid rgba(35, 96, 74, 0.32)",
         boxShadow: "0 4px 14px rgba(0,0,0,0.08)",
       }}
     >
       <div
         className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white"
         style={{
-          background: "linear-gradient(135deg, #238d4d 0%, #0c3b20 100%)",
-          boxShadow: "0 4px 14px rgba(26,89,52,0.3)",
+          background: "linear-gradient(135deg, #2b6d55 0%, #184434 100%)",
+          boxShadow: "0 4px 14px rgba(35,96,74,0.3)",
         }}
       >
         {icon}
@@ -90,7 +90,7 @@ export default function HomePage() {
 
               {/* CTA Button */}
               <div className="mt-1 mb-2">
-                <Link href="/produtos" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 sm:py-3 sm:px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 inline-block text-sm sm:text-base">
+                <Link href="/produtos" className="bg-green-cardiomed hover:bg-green-dark text-white font-bold py-2.5 px-5 sm:py-3 sm:px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 inline-block text-sm sm:text-base">
                   Conheça nossos produtos ↗
                 </Link>
               </div>
@@ -165,7 +165,7 @@ export default function HomePage() {
             <div
               className="absolute top-20 right-10 w-52 h-52 opacity-50"
               style={{
-                backgroundImage: "radial-gradient(circle, #216d42 1.8px, transparent 1.8px)",
+                backgroundImage: "radial-gradient(circle, #184434 1.8px, transparent 1.8px)",
                 backgroundSize: "42px 42px",
               }}
             />
@@ -173,20 +173,20 @@ export default function HomePage() {
             <div
               className="absolute bottom-16 left-8 w-44 h-44 opacity-50"
               style={{
-                backgroundImage: "radial-gradient(circle, #336B41 1.8px, transparent 1.8px)",
+                backgroundImage: "radial-gradient(circle, #23604A 1.8px, transparent 1.8px)",
                 backgroundSize: "42px 42px",
               }}
             />
             {/* Large blurred circle — top left */}
             <div
               className="absolute -top-24 -left-24 w-80 h-80 rounded-full"
-              style={{ background: "radial-gradient(circle, rgba(33,109,66,0.12) 0%, transparent 70%)" }}
+              style={{ background: "radial-gradient(circle, rgba(24,68,52,0.12) 0%, transparent 70%)" }}
             />
            
             {/* Small accent circle — mid left */}
             <div
               className="absolute top-1/2 -left-10 w-36 h-36 rounded-full -translate-y-1/2"
-              style={{ background: "radial-gradient(circle, rgba(26,89,52,0.10) 0%, transparent 70%)" }}
+              style={{ background: "radial-gradient(circle, rgba(35,96,74,0.10) 0%, transparent 70%)" }}
             />
           </div>
 
@@ -211,7 +211,7 @@ export default function HomePage() {
                 >
                   Quem somos
                 </p>
-                <div className="mt-3 w-12 h-1 rounded-full" style={{ background: "#133f26" }} />
+                <div className="mt-3 w-12 h-1 rounded-full" style={{ background: "#184434" }} />
               </div>
 
               <h2 className="text-black text-3xl sm:text-4xl font-bold leading-[1.15] tracking-tight">
@@ -220,7 +220,7 @@ export default function HomePage() {
                 <span
                   className="not-italic"
                   style={{
-                    color: "#216d42"
+                    color: "#23604A"
                   }}
                 >
                   melhor.
@@ -238,8 +238,8 @@ export default function HomePage() {
               href="/sobre"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
               style={{
-                background: "linear-gradient(135deg, #2ea55e 0%, #336B41 100%)",
-                boxShadow: "0 4px 22px rgba(46,165,94,0.38)",
+                background: "linear-gradient(135deg, #2b6d55 0%, #23604A 100%)",
+                boxShadow: "0 4px 22px rgba(43,109,85,0.38)",
               }}
             >
               Saiba mais ↗
@@ -274,7 +274,7 @@ export default function HomePage() {
             <div
               className="absolute top-2 right-10 w-32 h-32 opacity-50"
               style={{
-                backgroundImage: "radial-gradient(circle, #216d42 1.8px, transparent 1.8px)",
+                backgroundImage: "radial-gradient(circle, #184434 1.8px, transparent 1.8px)",
                 backgroundSize: "42px 42px",
               }}
             />

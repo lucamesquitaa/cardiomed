@@ -32,7 +32,7 @@ export default function ScrollToTop() {
         width: "48px",
         height: "48px",
         borderRadius: "50%",
-        background: "linear-gradient(135deg, #1e6b3e 0%, #133f26 100%)",
+        background: "linear-gradient(135deg, #23604A 0%, #184434 100%)",
         border: "1px solid rgba(255,255,255,0.18)",
         boxShadow: "0 4px 20px rgba(0,0,0,0.30)",
         display: "flex",

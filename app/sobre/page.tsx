@@ -87,7 +87,7 @@ function PersonCard({ photo, name, role }: Person) {
       </div>
       <div className="px-4 py-3 text-center">
         <p className="text-gray-900 font-semibold text-sm mb-0.5">{displayName}</p>
-        <p className="text-emerald-700 text-xs font-medium">{displayRole}</p>
+        <p className="text-green-cardiomed text-xs font-medium">{displayRole}</p>
       </div>
     </div>
   );
@@ -116,14 +116,14 @@ function OrgCard({
       <div
         className="w-20 h-20 rounded-full flex items-center justify-center text-white text-xl font-bold mb-3 shrink-0"
         style={{
-          background: "linear-gradient(135deg, #2ea55e 0%, #336B41 100%)",
+          background: "linear-gradient(135deg, #2b6d55 0%, #23604A 100%)",
           boxShadow: "0 4px 18px rgba(0,0,0,0.35)",
         }}
       >
         {initials}
       </div>
       <p className="text-white font-semibold text-sm leading-tight mb-1">{name}</p>
-      <p className="text-emerald-400 text-xs font-medium mb-3 leading-tight">{role}</p>
+      <p className="text-green-cardiomed text-xs font-medium mb-3 leading-tight">{role}</p>
       <ul className="text-left w-full space-y-1.5">
         {bullets.map((b, i) => (
           <li key={i} className="flex items-start gap-1.5 text-white/60 text-xs">
@@ -156,7 +156,7 @@ export default function SobrePage() {
             <div
               className="absolute top-20 right-10 w-52 h-52 opacity-50"
               style={{
-                backgroundImage: "radial-gradient(circle, #216d42 1.8px, transparent 1.8px)",
+                backgroundImage: "radial-gradient(circle, #184434 1.8px, transparent 1.8px)",
                 backgroundSize: "42px 42px",
               }}
             />
@@ -164,7 +164,7 @@ export default function SobrePage() {
             <div
               className="absolute bottom-16 left-8 w-44 h-44 opacity-50"
               style={{
-                backgroundImage: "radial-gradient(circle, #336B41 1.8px, transparent 1.8px)",
+                backgroundImage: "radial-gradient(circle, #23604A 1.8px, transparent 1.8px)",
                 backgroundSize: "42px 42px",
               }}
             />
@@ -255,7 +255,7 @@ export default function SobrePage() {
           style={{
             backgroundColor: "#ffffff",
             backgroundImage:
-              "repeating-linear-gradient(to bottom, transparent 0px, transparent 47px, rgba(33,109,66,0.14) 47px, rgba(33,109,66,0.14) 48px)",
+              "repeating-linear-gradient(to bottom, transparent 0px, transparent 47px, rgba(24,68,52,0.14) 47px, rgba(24,68,52,0.14) 48px)",
           }}
         >
           <div className="text-center mb-10">
@@ -318,7 +318,7 @@ function MvvCard({
       <div
         className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5"
         style={{
-          background: "linear-gradient(135deg, #2ea55e 0%, #336B41 100%)",
+          background: "linear-gradient(135deg, #2b6d55 0%, #23604A 100%)",
           boxShadow: "0 4px 18px rgba(0,0,0,0.2)",
         }}
       >

@@ -11,9 +11,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-green-cardiomed: #336B41;
-  --color-green-mid: #1e6b3e;
-  --color-green-dark: #133f26;
+  --color-green-cardiomed: #23604A;
+  --color-green-mid: #1e523f;
+  --color-green-dark: #184434;
   --color-blue-cardiomed: #66a5e8;
   --color-blue-cardiomed-dark: #8bbfe8;
 }
@@ -46,7 +46,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #336B41;
+  background-color: #23604A;
   border-radius: 2px;
   transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -126,13 +126,13 @@ body {
 }
 
 .card-badge {
-  background: rgba(46,165,94,0.12);
-  border: 1px solid rgba(46,165,94,0.22);
+  background: rgba(43,109,85,0.12);
+  border: 1px solid rgba(43,109,85,0.22);
 }
 
 .product-card:hover .card-badge {
-  background: rgba(46,165,94,0.10);
-  border-color: rgba(46,165,94,0.28);
+  background: rgba(43,109,85,0.10);
+  border-color: rgba(43,109,85,0.28);
 }
 
 .product-item-plain {

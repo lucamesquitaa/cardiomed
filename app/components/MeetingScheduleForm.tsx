@@ -90,8 +90,8 @@ export default function MeetingScheduleForm({
       className={`rounded-3xl p-8 ${className}`}
       style={{
         background: "rgba(255,255,255,0.9)",
-        border: "1px solid rgba(26,89,52,0.10)",
-        boxShadow: "0 8px 40px rgba(26,89,52,0.08), 0 1px 0 rgba(255,255,255,0.8)",
+        border: "1px solid rgba(35,96,74,0.10)",
+        boxShadow: "0 8px 40px rgba(35,96,74,0.08), 0 1px 0 rgba(255,255,255,0.8)",
       }}
     >
       <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -100,8 +100,8 @@ export default function MeetingScheduleForm({
           <span
             className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white"
             style={{
-              background: "linear-gradient(135deg, #2ea55e 0%, #336B41 100%)",
-              boxShadow: "0 2px 8px rgba(26,89,52,0.35)",
+              background: "linear-gradient(135deg, #2b6d55 0%, #23604A 100%)",
+              boxShadow: "0 2px 8px rgba(35,96,74,0.35)",
             }}
           >
             <svg
@@ -162,8 +162,8 @@ export default function MeetingScheduleForm({
           disabled={status === "sending"}
           className="mt-1 flex cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
           style={{
-            background: "linear-gradient(135deg, #2ea55e 0%, #336B41 100%)",
-            boxShadow: "0 6px 20px rgba(26,89,52,0.30)",
+            background: "linear-gradient(135deg, #2b6d55 0%, #23604A 100%)",
+            boxShadow: "0 6px 20px rgba(35,96,74,0.30)",
           }}
         >
           <svg

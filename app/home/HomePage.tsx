@@ -199,7 +199,7 @@ export default function HomePage() {
 
           {/* Content */}
           <div
-            className="relative max-w-6xl mx-auto px-6 sm:px-8 py-16 sm:py-24 lg:py-[138px] grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+            className="relative max-w-6xl mx-auto px-6 sm:px-8 py-16 sm:py-24 lg:pt-[138px] lg:pb-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
             style={{ zIndex: 10 }}
           >
             {/* Text */}
@@ -266,7 +266,7 @@ export default function HomePage() {
         </section>
 
         {/* ── CONTATO ────────────────────────────────────────── */}
-        <section id="contato" className="relative bg-white px-3 py-6 sm:px-6 sm:py-20">
+        <section id="contato" className="relative bg-white px-3 py-6 sm:px-6 sm:py-20 lg:pt-10">
           <div className="relative z-10 max-w-7xl mx-auto px-0 sm:px-8">
               {/* Decorative green dots */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 2 }}>

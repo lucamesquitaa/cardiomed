@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     images: [OG_IMAGE],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Sobre | Cardiomed",
     description,
     images: [OG_IMAGE.url],
